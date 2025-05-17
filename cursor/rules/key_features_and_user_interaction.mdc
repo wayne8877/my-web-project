@@ -1,0 +1,43 @@
+# Key Features and User Interaction
+
+## Core Website Sections (from index.html)
+-   **Navigation:** Main navigation bar for easy access to different site areas. Includes language toggle.
+-   **Hero Section:** Full-screen image slider (SwiperJS) to showcase key visuals.
+    -   Interaction: Auto-play, manual navigation (prev/next buttons, pagination).
+-   **Product Information ("PICK UP"):** Gallery grid displaying featured products with images, names, and prices.
+    -   Interaction: Visual Browse, "MORE" button potentially leading to a detailed product page or section.
+-   **New Products ("NEW PRODUCT"):** Similar gallery grid for new arrivals.
+    -   Interaction: Visual Browse, "MORE" button.
+-   **Company Showcase ("合盛出品"):** Gallery grid for articles, blog posts, or company stories.
+    -   Interaction: Visual Browse, "MORE" button.
+-   **Contact Form:** Standard form for user inquiries.
+    -   Interaction: Input fields, client-side validation (`validateForm`), submission button.
+-   **Footer:** Contains links to informational pages, company details, and a newsletter subscription form.
+    -   Interaction: Clickable links, email input for newsletter.
+
+## Key Interactive Elements to Emphasize / Develop
+-   **Language Toggle (`languageToggle` button):**
+    -   Functionality: Switches website content between Chinese and English (uses `translations.js` and `language.js`).
+    -   User Experience: Clear visual indication of the current language and easy switching.
+-   **Image Sliders/Carousels (SwiperJS):**
+    -   Ensure smooth transitions and touch-friendly controls for mobile devices.
+    -   Optimize images within sliders for fast loading.
+-   **Galleries (`.gallery-grid`):**
+    -   Consider hover effects on gallery items for visual feedback (e.g., slight zoom, shadow).
+    -   "MORE" buttons should have clear destinations.
+-   **Contact Form (`.contact-form`):**
+    -   Provide clear visual feedback during form validation (e.g., highlighting errors, success messages).
+    -   Ensure the `validateForm(event)` function is robust.
+    -   Clarify form submission mechanism (e.g., if it will use a static form handler like Formspree or Netlify Forms, as there's no backend).
+-   **Navigation & Links:**
+    -   Hover states on all clickable links and buttons.
+    -   Smooth scrolling for on-page links if any are used.
+-   **(Future) Interactive Product Showcase:**
+    -   If "MORE" leads to product details, consider interactive elements like image zoom on product photos, or tabbed content for specifications/details.
+
+## Desired User Experience
+-   **Visually Appealing:** Modern, clean design that reflects the company's brand.
+-   **Intuitive:** Easy for users to navigate and find information.
+-   **Responsive:** Seamless experience across desktops, tablets, and mobile devices.
+-   **Engaging:** Interactive elements should be subtle yet effective in drawing user attention and encouraging exploration.
+-   **Fast & Smooth:** All interactions should feel quick and responsive, with no jank or lag.

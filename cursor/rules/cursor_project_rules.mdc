@@ -1,0 +1,32 @@
+# Cursor Project Rules
+
+## General Coding Rules
+-   **Language Focus:** Primary languages are HTML, CSS, and JavaScript (ES6+).
+-   **No TypeScript (for now):** While TypeScript offers benefits, for this static promotional site aiming for simplicity and potentially easier onboarding for pure frontend tasks, we will stick to JavaScript. If project complexity significantly increases, TypeScript can be reconsidered.
+-   **Clean Code Principles:**
+    -   Write readable, understandable, and maintainable code.
+    -   Keep functions short and focused on a single responsibility.
+    -   Use descriptive names for variables, functions, and classes.
+    -   Comment code where logic is complex or non-obvious.
+-   **Frameworks:** No major JavaScript frameworks (React, Vue, Angular) are to be introduced for core functionality to maintain lightness. Vanilla JS and specific-purpose libraries (like SwiperJS) are preferred.
+
+## File Patterns and Structure
+-   **HTML:** `*.html` (e.g., `index.html`, `about.html`)
+-   **CSS:** `assets/css/*.css` (primarily `main.css`)
+-   **JavaScript:** `assets/js/*.js` (e.g., `main.js`, `language.js`, `translations.js`)
+-   **Images:** `assets/images/*.(jpg|jpeg|png|svg|webp)`
+-   Adhere to the existing asset structure found in the project.
+
+## Version Control (Recommended)
+-   While not a strict Cursor rule, it's highly recommended to use Git for version control.
+-   Commit messages should be clear and descriptive of the changes made.
+
+## AI Interaction with Cursor
+-   **Context:** When asking Cursor AI for help, refer to these `.mdc` rule files if necessary to provide context (e.g., "Remember the frontend guidelines when refactoring this CSS").
+-   **Specificity:** Be specific in requests to Cursor AI for generating or modifying code.
+-   **Code Generation:** Prefer generation of vanilla JavaScript, HTML, and CSS according to the guidelines specified.
+
+## Linting and Formatting (Optional but Recommended)
+-   Consider setting up Prettier for automated code formatting to ensure consistency.
+-   Consider ESLint for JavaScript linting to catch potential errors and enforce coding standards.
+    -   If implemented, configure them to align with the `frontend_guidelines.mdc`.

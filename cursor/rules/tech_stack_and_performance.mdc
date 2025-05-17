@@ -1,0 +1,30 @@
+# Tech Stack and Performance
+
+## Frontend Technologies
+-   **Core:** HTML5, CSS3, JavaScript (ES6+)
+    -   Reasoning: Standard web technologies for broad compatibility and control over the presentation and interaction. The existing `index.html` already uses these.
+-   **CSS Styling:**
+    -   Direct CSS (as seen in `assets/css/main.css`).
+    -   Consideration for future: If complexity grows, utility-first CSS like Tailwind CSS might be an option, but for now, stick to existing `main.css` conventions.
+-   **JavaScript Libraries:**
+    -   **SwiperJS:** Used for image sliders/carousels (as seen in `index.html`).
+    -   **Custom Scripts:** For functionalities like language toggle (`language.js`), form validation, and other dynamic interactions (`main.js`, `translations.js`).
+-   **Frameworks:** No complex JavaScript framework (like React, Vue, Angular) is planned for this version to keep it lightweight and fast for a promotional static site. We will rely on vanilla JavaScript and targeted libraries.
+
+## Performance and Global Accessibility
+-   **Static Site Deployment:** The website will be deployed as static files (HTML, CSS, JS, images).
+    -   Benefit: Excellent performance and security, easy to scale with a CDN.
+-   **Content Delivery Network (CDN):**
+    -   Strategy: Utilize a CDN (e.g., Cloudflare, Netlify, Vercel, AWS CloudFront, Azure CDN) to distribute assets globally. This ensures users from any location can load the website quickly.
+    -   Action: Host all static assets (images, CSS, JS) on the CDN.
+-   **Image Optimization:**
+    -   Format: Use modern image formats like WebP where possible, with fallbacks to JPEG/PNG for older browsers.
+    -   Compression: Compress images to reduce file size without significant quality loss.
+    -   Responsive Images: Implement responsive images using `<picture>` element or `srcset` attribute if different image sizes are needed for different devices.
+-   **Code Minification:** Minify HTML, CSS, and JavaScript files to reduce their size.
+-   **Caching:** Configure browser caching headers appropriately for static assets.
+-   **Lazy Loading:** For images below the fold or non-critical resources, implement lazy loading to improve initial page load time. The SwiperJS library might have options for this for its slides.
+
+## No Backend
+-   This is a static website. There is no server-side application backend (e.g., Node.js, Python, PHP) or database.
+-   The contact form will submit data either via a third-party form service (like Netlify Forms, Formspree) or a simple `mailto:` link if appropriate, or a serverless function if minimal processing is absolutely needed (though avoiding this is preferred for simplicity). The current `index.html` has a form with `onsubmit="return validateForm(event)"` which implies client-side validation and might need a static form handling solution.

@@ -1,0 +1,28 @@
+# Project Overview and Goals
+
+## Project Name
+HeSheng Button Factory (合盛钮扣厂) Corporate Website
+
+## Project Type
+Static promotional website. No backend database or complex server-side logic is required. The primary focus is on corporate image presentation and product showcasing.
+
+## Core Goals
+1.  **Brand Promotion:** Clearly present HeSheng Button Factory, its values, and its products.
+2.  **User Engagement:** Provide a visually appealing and interactive experience for visitors.
+3.  **Information Access:** Allow users to easily find product information and contact details.
+4.  **Global Reach:** Ensure the website is accessible and performs well for users worldwide.
+
+## Target Audience
+- Potential B2B clients
+- Designers
+- Existing customers looking for product information
+
+## Brief Description of `index.html`
+The main landing page (`index.html`) includes:
+- Logo and navigation bar.
+- A full-screen image slider.
+- Sections for "Product Information" (PICK UP) and "NEW PRODUCT".
+- A gallery section "合盛出品".
+- A contact form.
+- A detailed footer with company information and navigation links.
+The page structure is semantic HTML and uses external CSS and JavaScript for styling and interactivity (like Swiper for the slider and custom scripts for language toggling and form validation).

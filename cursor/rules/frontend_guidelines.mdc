@@ -1,0 +1,42 @@
+# Frontend Guidelines
+
+## HTML Structure
+-   **Semantic HTML:** Use HTML5 semantic elements (`<nav>`, `<section>`, `<article>`, `<aside>`, `<footer>`, etc.) to structure content meaningfully. This is generally followed in `index.html`.
+-   **Accessibility (A11y):**
+    -   Ensure all images have descriptive `alt` attributes.
+    -   Use ARIA attributes where necessary to enhance accessibility for interactive components.
+    -   Ensure sufficient color contrast.
+-   **Validation:** Validate HTML to catch errors.
+
+## CSS Styling
+-   **Organization:** Styles are primarily in `assets/css/main.css`. Keep this organization.
+-   **Naming Conventions:**
+    -   Use clear, descriptive class names (e.g., `.main-nav`, `.gallery-item`, `.contact-form`).
+    -   Follow a consistent naming convention (e.g., BEM-like `block__element--modifier` or lowercase-with-dashes as currently used in `main.css`). Let's stick to **lowercase-with-dashes** for consistency with `main.css`.
+-   **Units:** Use relative units (em, rem, %) for responsive typography and layout where appropriate. Use `px` for fixed-size elements or borders if needed.
+-   **Comments:** Add comments to CSS to explain complex sections or non-obvious styles.
+-   **Responsive Design:** Ensure layouts adapt to different screen sizes using media queries. `index.html` structure seems to aim for this.
+
+## JavaScript
+-   **Modularity:** JavaScript is organized into `assets/js/main.js`, `assets/js/language.js`, and `assets/js/translations.js`. New general scripts should go into `main.js` or a new specific file if the functionality is distinct and substantial.
+-   **Clarity:** Write clear and concise JavaScript.
+    -   Use meaningful variable and function names.
+    -   Comment complex logic.
+-   **DOM Manipulation:**
+    -   Cache DOM elements in variables if they are accessed multiple times.
+    -   Minimize direct DOM manipulations in loops for performance.
+-   **Error Handling:** Implement basic error handling where necessary (e.g., for form validation in `validateForm` function in `index.html`).
+-   **Libraries:** SwiperJS is used for carousels. Understand its API for modifications. Custom scripts should not conflict with library functionalities.
+-   **ES6+:** Utilize modern JavaScript features (ES6+) where appropriate and browser compatibility allows (transpilation might be considered if older browser support is critical, but for now, assume modern browsers).
+
+## File and Folder Structure
+-   **Assets:**
+    -   CSS: `assets/css/`
+    -   JavaScript: `assets/js/`
+    -   Images: `assets/images/`
+-   Maintain this structure for clarity.
+
+## General Principles
+-   **Readability:** Code should be easy to read and understand.
+-   **Consistency:** Apply these guidelines consistently across the entire project.
+-   **DRY (Don't Repeat Yourself):** Avoid redundant code. Create reusable functions or styles where possible.
