@@ -1,0 +1,330 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+    <title>HeSheng Button Factory | 合盛钮扣厂</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="合盛钮扣厂-专业钮扣制造商" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/about.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+    /* 导航栏样式 */
+    .main-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        position: relative;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+    }
+
+    .nav-item {
+        color: #333;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 8px 15px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-item:hover {
+        background-color: #f0f0f0;
+        color: #000;
+    }
+
+    .nav-item.active {
+        background-color: #e0e0e0;
+        color: #000;
+        font-weight: bold;
+    }
+
+    /* 中英文切换按钮样式 */
+    #languageToggle {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        border: 1px solid #333;
+        padding: 5px 10px;
+        background: transparent;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    #languageToggle:hover {
+        background: #333;
+        color: #fff;
+    }
+
+    /* 居中文字样式 */
+    .centered-text {
+        text-align: center;
+        font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+        font-size: 38px; /* 默认字体大小 */
+        color: #333;
+        margin: 20px 0; /* 与导航栏的间距 */
+    }
+
+    .centered-text p {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 第一排文字样式 */
+    .centered-text .line1 {
+        font-size: 38px; /* 字体大小 */
+        font-weight: bold; /* 字体加粗 */
+    }
+
+    /* 第二排文字样式 */
+    .centered-text .line2 {
+        font-size: 24px; /* 字体大小 */
+        font-weight: 500; /* 中等粗细 */
+    }
+
+    /* 第三排文字样式 */
+    .centered-text .line3 {
+        font-size: 12px; /* 字体大小 */
+        font-weight: normal; /* 正常粗细 */
+    }
+</style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <nav class="main-nav">
+        <div class="nav-links">
+            <a href="index.html" class="nav-item active" data-translate="home">首页</a>
+            <a href="#" class="nav-item" data-translate="reading">阅读</a>
+            <a href="#" class="nav-item" data-translate="magazine_treasure">杂志宝库</a>
+            <a href="#" class="nav-item" data-translate="tutorials">使用教程</a>
+            <a href="#" class="nav-item" data-translate="button_stories">钮扣物语</a>
+            <a href="about.html" class="nav-item" data-translate="about_hesheng">关于合盛</a>
+        </div>
+        <!-- 中英文切换按钮 -->
+        <button id="languageToggle">EN | 中文</button>
+    </nav>
+
+    <!-- 居中文字区域 -->
+    <div class="centered-text">
+        <p>合盛钮扣厂</p>
+        <p>Hesheng Button Factory</p>
+        <p>Craftsmanship creates quality and leads the future of buttons</p>
+    </div>
+
+    <div class="action-button-container">
+        <div data-role="action-button" id="mainActionButton">
+            <button class="main-action">
+                <span class="icon">+</span>
+            </button>
+            <ul class="actions">
+                <li><a href="contact.html" title="联系我们">📞</a></li>
+                <li><a href="#" title="在线咨询">💬</a></li>
+                <li><a href="#" title="返回顶部">⬆️</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+<nav class="main-nav">
+    <button class="mobile-nav-toggle" aria-label="切换菜单">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <div class="nav-links">
+    </div>
+</nav>
+
+    <div class="swiper-container main-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="assets/images/banner1.jpg" alt="合盛钮扣 产品展示1">
+                <div class="slide-caption">
+                    <h2 data-translate="slide1_title">高品质钮扣</h2>
+                    <p data-translate="slide1_desc">精工细作，追求卓越</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/images/banner2.jpg" alt="合盛钮扣 产品展示2">
+                <div class="slide-caption">
+                    <h2 data-translate="slide2_title">多样化选择</h2>
+                    <p data-translate="slide2_desc">满足您所有的设计需求</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/images/banner3.jpg" alt="合盛钮扣 产品展示3">
+                <div class="slide-caption">
+                    <h2 data-translate="slide3_title">创新与传统</h2>
+                    <p data-translate="slide3_desc">匠心传承，引领时尚</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <section id="pickup" class="gallery-section">
+        <h2 class="section-title" data-translate="pickup_title">推荐产品</h2>
+        <h3 class="section-subtitle" data-translate="pickup_subtitle">PICK UP</h3>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="assets/images/pickup1.jpg" alt="推荐产品 1">
+                <div class="item-content">
+                    <h3 data-translate="pickup1_name">优雅金属扣</h3>
+                    <p data-translate="pickup1_desc">经典设计，永不过时。</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/pickup2.jpg" alt="推荐产品 2">
+                <div class="item-content">
+                    <h3 data-translate="pickup2_name">天然木质扣</h3>
+                    <p data-translate="pickup2_desc">环保材质，自然纹理。</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/pickup3.jpg" alt="推荐产品 3">
+                <div class="item-content">
+                    <h3 data-translate="pickup3_name">时尚树脂扣</h3>
+                    <p data-translate="pickup3_desc">色彩丰富，造型多样。</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/pickup4.jpg" alt="推荐产品 4">
+                <div class="item-content">
+                    <h3 data-translate="pickup4_name">复古贝壳扣</h3>
+                    <p data-translate="pickup4_desc">光泽独特，品味之选。</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-more">
+            <a href="#" class="more-btn" data-translate="more_button">MORE</a>
+        </div>
+    </section>
+
+    <section id="new-product" class="gallery-section">
+        <h2 class="section-title" data-translate="new_product_title">最新产品</h2>
+        <h3 class="section-subtitle" data-translate="new_product_subtitle">NEW PRODUCT</h3>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="assets/images/new1.jpg" alt="最新产品 1">
+                <div class="item-content">
+                    <h3 data-translate="newprod1_name">水晶镶嵌扣</h3>
+                    <p data-translate="newprod1_desc">闪耀夺目，点亮设计。</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/new2.jpg" alt="最新产品 2">
+                <div class="item-content">
+                    <h3 data-translate="newprod2_name">皮革拼接扣</h3>
+                    <p data-translate="newprod2_desc">质感碰撞，个性十足。</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/new3.jpg" alt="最新产品 3">
+                <div class="item-content">
+                    <h3 data-translate="newprod3_name">迷你系列扣</h3>
+                    <p data-translate="newprod3_desc">小巧精致，细节加分。</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/new4.jpg" alt="最新产品 4">
+                <div class="item-content">
+                    <h3 data-translate="newprod4_name">环保再生材料扣</h3>
+                    <p data-translate="newprod4_desc">可持续时尚的新选择。</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-more">
+            <a href="#" class="more-btn" data-translate="more_button">MORE</a>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+        <h2 class="section-title" data-translate="gallery_title">精工智造</h2>
+        <h3 class="section-subtitle" data-translate="gallery_subtitle">GALLERY</h3>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="assets/images/gallery-long-1.jpg" alt="精工智造 长图1">
+                <div class="item-content">
+                    <h3 data-translate="gallery_item1_title">创意作品集锦</h3>
+                    </div>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/gallery-long-2.jpg" alt="精工智造 长图2">
+                <div class="item-content">
+                    <h3 data-translate="gallery_item2_title">匠心独运系列</h3>
+                    </div>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/gallery-long-3.jpg" alt="精工智造 长图3">
+                <div class="item-content">
+                    <h3 data-translate="gallery_item3_title">设计师合作款</h3>
+                    </div>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/gallery-long-4.jpg" alt="精工智造 长图4">
+                <div class="item-content">
+                    <h3 data-translate="gallery_item4_title">客户定制案例</h3>
+                    </div>
+            </div>
+        </div>
+        <div class="gallery-more">
+            <a href="#" class="more-btn" data-translate="more_button">MORE</a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-content container">
+<div class="footer-section">
+    <h3 data-translate="footer_about">关于</h3>
+    <ul>
+        <li><a href="#" data-translate="footer_user_guide">用户指南</a></li>
+        <li><a href="faq.html" data-translate="footer_faq">常见问题</a></li>
+        <li><a href="contact.html" data-translate="footer_contact_us">询问</a></li>
+        <li><a href="about.html" data-translate="footer_company_profile">公司简介</a></li>
+        <li><a href="terms.html" data-translate="footer_tos">服务条款</a></li> 
+        <li><a href="privacy.html" data-translate="footer_privacy">隐私政策</a></li>
+    </ul>
+</div>
+            <div class="footer-section">
+                <h3 data-translate="footer_usage_rules">使用规则</h3>
+                <div class="company-info">
+                    <p data-translate="footer_company_name">合盛钮扣厂</p>
+                    <p data-translate="footer_address">广东省东莞市凤岗镇凤德岭凤鸣路36号</p>
+                    <p data-translate="footer_zip_phone">邮编 :523692</p>
+                    <p data-translate="footer_hours">营业时间 :   07:00-21:00</p>
+                    <p data-translate="footer_closing_days">休息日：无休息日</p>
+                    
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3 data-translate="footer_newsletter">订阅新闻通讯</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="输入您的电子邮件地址" data-translate="newsletter_placeholder">
+                    <button type="submit" class="subscribe-btn" data-translate="newsletter_subscribe">登记</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <div class="payment-methods">
+          
+            <p class="copyright">©<span id="currentYear">2024</span> <span data-translate="company_name_ বটে">合盛钮扣厂</span>. <span data-translate="all_rights_reserved">版权所有</span>.</p>
+    </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/action-button.js"></script>

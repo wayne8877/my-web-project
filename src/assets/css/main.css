@@ -1,0 +1,782 @@
+/* assets/css/main.css */
+
+/* 1. 重置基本样式 (Basic Reset) */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* 平滑滚动 */
+    font-size: 16px; /* 设置根字体大小，方便rem单位 */
+}
+
+body {
+    font-family: 'Montserrat', 'Noto Sans SC', sans-serif; /* 优先使用 Montserrat 和 Noto Sans SC */
+    line-height: 1.6;
+    color: #333; /* 主要文字颜色 */
+    background-color: #f9f9f9; /* 页面背景色 */
+    -webkit-font-smoothing: antialiased; /* 抗锯齿，使字体更平滑 */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* 消除图片底部的空白 */
+}
+
+a {
+    text-decoration: none;
+    color: #333; /* 默认链接颜色 */
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #007bff; /* 链接悬停颜色，可以换成你的品牌色 */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500; /* 标题默认字重 */
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+}
+
+/* 2. 辅助类 (Utility Classes) */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* 3. Logo 和导航栏 */
+.logo-container {
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.main-logo {
+    max-height: 50px; /* 根据你的logo调整 */
+    width: auto;
+}
+
+.main-nav {
+    background-color: #fff; /* 导航栏背景色 */
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    position: sticky; /* 固定导航栏 */
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.main-nav .nav-links {
+    display: flex;
+    justify-content: center; /* 导航链接居中 */
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap; /* 允许换行以适应小屏幕 */
+}
+
+.main-nav .nav-item {
+    padding: 10px 15px; /* 导航项间距 */
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    white-space: nowrap; /* 防止单个导航项文字换行 */
+}
+
+.main-nav .nav-item:hover {
+    color: #007bff;
+}
+
+#languageToggle {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    margin-left: 15px; /* 调整与导航项的间距 */
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+#languageToggle:hover {
+    background-color: #f0f0f0;
+   
+}.main-nav 
+
+.mobile-nav-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.mobile-nav-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #333;
+    margin: 5px 0;
+    transition: all 0.3s;
+}
+
+/* 当菜单打开时的样式 */
+.mobile-nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: #fff;
+        padding: 80px 20px 20px;
+        transition: 0.3s;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        flex-direction: column;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-item {
+        display: block;
+        margin: 15px 0;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    #languageToggle {
+        margin: 20px auto 0;
+    }
+}
+
+
+/* 4. 全屏轮播 (Swiper) */
+.main-slider {
+    width: 100%;
+    height: 60vh; /* 调整轮播图高度，例如视口高度的60% */
+    min-height: 400px; /* 最小高度 */
+    max-height: 700px; /* 最大高度 */
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* 为了定位文字说明 */
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 10%; /* 调整文字位置 */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+    padding: 15px 30px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.slide-caption h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.slide-caption p {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* Swiper 导航按钮和分页器颜色调整 */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #ffffff; /* 箭头颜色 */
+    background-color: rgba(0,0,0,0.3); /* 箭头背景 */
+    padding: 10px;
+    border-radius: 50%;
+    width: 44px; /* 确保背景区域足够 */
+    height: 44px;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 20px; /* 箭头图标大小 */
+}
+
+
+.swiper-pagination-bullet {
+    background: rgba(255,255,255,0.7); /* 分页器点点默认颜色 */
+    opacity: 0.8;
+}
+
+.swiper-pagination-bullet-active {
+    background: #ffffff; /* 当前激活的点点颜色 */
+    opacity: 1;
+}
+
+
+/* 5. Section 标题样式 */
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 60px; /* 模块间距 */
+    margin-bottom: 10px; /* 主副标题间距 */
+    color: #222;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    text-align: center;
+    color: #777;
+    margin-bottom: 40px; /* 副标题与内容间距 */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 6. Gallery Section (PICK UP, NEW PRODUCT, GALLERY) */
+.gallery-section {
+    padding: 40px 0;
+    overflow: hidden; /* 防止横向滚动条影响页面布局 */
+}
+
+.gallery-grid {
+    display: flex; /* 改为 flex 布局 */
+    flex-wrap: nowrap; /* 禁止换行，强制单行 */
+    overflow-x: auto; /* 内容超出时横向滚动 */
+    gap: 20px; /* 项目之间的间距 */
+    padding: 10px 0 20px 0; /* 上下留出空间给滚动条，避免遮挡内容 */
+    margin-left: auto;  /* 使 gallery-grid 在其父容器中居中（如果父容器比它宽） */
+    margin-right: auto;
+    /* 如果希望滚动区域从页面边缘开始，可以设置 width: 100% 并配合 box-sizing: border-box 和 padding */
+    /* 或者使用 .container 来限制最大宽度 */
+    max-width: 1200px; /* 限制最大宽度，同 .container */
+    width: 90%; /* 响应式宽度 */
+
+    /* 为了在支持的浏览器中隐藏滚动条但保留滚动功能 */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+/* 针对 Webkit 浏览器 (Chrome, Safari) 隐藏滚动条 */
+.gallery-grid::-webkit-scrollbar {
+    display: none;
+}
+
+
+.gallery-item {
+    flex: 0 0 auto; /* 项目不拉伸、不收缩，基于其内容宽度 */
+    width: 280px; /* 给每个卡片一个固定宽度 */
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex; /* 让 item 内部也变成 flex 容器 */
+    flex-direction: column; /* 让图片和文字内容垂直排列 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* 通用 gallery-item 图片样式 (PICK UP, NEW PRODUCT) */
+.gallery-item img {
+    width: 100%;
+    aspect-ratio: 4 / 3; /* 给图片一个固定的宽高比 */
+    object-fit: cover; /* 裁剪图片以适应容器 */
+    display: block;
+}
+
+.gallery-item .item-content {
+    padding: 15px;
+    flex-grow: 1; /* 让内容区域填满剩余空间（如果需要） */
+    border-top: 1px solid #e0e0e0; /* 图片和文字之间的分隔线 */
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-item h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.gallery-item p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 0; /* 移除默认的p标签下边距 */
+    flex-grow: 1; /* 如果希望描述文字多的卡片和少的卡片底部对齐，可以去掉或调整 */
+}
+
+/* ---- 针对 "合盛出品" (#gallery) 的特殊样式 ---- */
+#gallery .gallery-item {
+    width: 260px; /* 合盛出品卡片可以稍窄，或根据长图内容调整 */
+    /* 高度将由图片和内容自动决定 */
+}
+
+#gallery .gallery-item img {
+    width: 100%; /* 图片宽度仍然撑满其卡片 */
+    height: auto; /* 关键：高度自适应，保持图片原始比例 */
+    aspect-ratio: unset; /* 关键：移除固定的宽高比 */
+    object-fit: initial; /* 或 contain。initial 会让图片自然填充 */
+}
+
+#gallery .gallery-item .item-content {
+    padding: 10px 15px; /* 合盛出品的文字内容区域可以有不同padding */
+}
+/* ---- 结束 "合盛出品" 特殊样式 ---- */
+
+
+.gallery-more {
+    text-align: center;
+    margin-top: 30px; /* 与滚动区域的间距 */
+}
+
+.more-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 1px solid #333;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.more-btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* 7. 页脚样式 */
+.site-footer {
+    background: #fff; /* 页脚背景改为白色 */
+    border-top: 1px solid #eee; /* 页脚顶部加一条分割线 */
+    padding: 60px 0 20px;
+    margin-top: 80px;
+    color: #555; /* 页脚文字颜色 */
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 响应式列布局 */
+    gap: 40px;
+}
+
+.footer-section h3 {
+    font-size: 1.1rem; /* 调整页脚小标题大小 */
+    font-weight: 500; /* 字重调整 */
+    margin-bottom: 20px;
+    color: #333; /* 小标题颜色深一点 */
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul a {
+    color: #555; /* 链接颜色 */
+    font-size: 0.9rem;
+}
+.footer-section ul a:hover {
+    color: #007bff; /* 链接悬停颜色 */
+}
+
+.company-info p {
+    margin-bottom: 8px;
+    font-size: 0.9rem; /* 公司信息文字大小 */
+    line-height: 1.7;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px; /* 与标题的间距 */
+}
+
+.newsletter-form input[type="email"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.subscribe-btn {
+    padding: 10px 20px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe-btn:hover {
+    background-color: #555;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee; /* 底部区域的分割线 */
+    text-align: center; /* 让支付方式和版权信息居中 */
+}
+
+.payment-methods {
+    display: flex;
+    justify-content: center; /* 图标居中显示 */
+    align-items: center;
+    gap: 10px; /* 图标间距 */
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* 允许换行 */
+}
+
+.payment-methods span {
+    color: #555;
+    font-size: 0.9rem;
+    margin-right: 5px;
+}
+
+.payment-methods img {
+    height: 24px; /* 支付图标大小 */
+    width: auto;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+.payment-methods img:hover {
+    opacity: 1;
+}
+
+.copyright {
+    color: #777; /* 版权文字颜色 */
+    font-size: 0.85rem;
+}
+
+
+/* 8. 响应式设计调整 */
+@media (max-width: 1024px) {
+    .main-slider {
+        height: 50vh;
+        min-height: 350px;
+    }
+    .slide-caption h2 {
+        font-size: 1.6rem;
+    }
+    .slide-caption p {
+        font-size: 0.9rem;
+    }
+
+    .gallery-item {
+        width: 260px; /* 在中等屏幕上稍微减小卡片宽度 */
+    }
+    #gallery .gallery-item {
+        width: 240px; /* 合盛出品的卡片也相应调整 */
+    }
+}
+
+@media (max-width: 768px) {
+    .main-nav .nav-links {
+        justify-content: space-around; /* 在小屏幕上让导航项分布更均匀 */
+    }
+    .main-nav .nav-item {
+        padding: 10px; /* 减小导航项内边距 */
+        font-size: 0.85rem;
+    }
+    #languageToggle {
+        margin-left: 10px;
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-top: 40px;
+    }
+    .section-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 30px;
+    }
+
+    .main-slider {
+        height: 45vh;
+        min-height: 300px;
+    }
+    .slide-caption {
+        bottom: 8%;
+        padding: 10px 20px;
+    }
+    .slide-caption h2 {
+        font-size: 1.4rem;
+    }
+    .slide-caption p {
+        font-size: 0.8rem;
+    }
+    .swiper-button-next, .swiper-button-prev {
+        width: 38px;
+        height: 38px;
+    }
+    .swiper-button-next::after, .swiper-button-prev::after {
+        font-size: 16px;
+    }
+
+
+    .gallery-grid {
+        gap: 15px; /* 减小项目间距 */
+        padding-bottom: 15px;
+        width: 95%; /* 在更小的屏幕上，让滚动区域更宽一些 */
+    }
+    .gallery-item {
+        width: 220px; /* 进一步减小卡片宽度 */
+    }
+    #gallery .gallery-item {
+        width: 200px; /* 合盛出品的卡片也相应调整 */
+    }
+    .gallery-item h3 {
+        font-size: 1rem;
+    }
+    .gallery-item p {
+        font-size: 0.85rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr; /* 页脚单列显示 */
+        gap: 30px;
+    }
+    .footer-section {
+        text-align: center; /* 页脚内容居中 */
+    }
+    .newsletter-form {
+        flex-direction: column; /* 订阅表单垂直排列 */
+        align-items: center; /* 居中表单项 */
+    }
+    .newsletter-form input[type="email"] {
+        width: 100%;
+        max-width: 300px; /* 限制输入框最大宽度 */
+    }
+    .subscribe-btn {
+        width: 100%;
+        max-width: 300px; /* 限制按钮最大宽度 */
+    }
+    .payment-methods {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-nav .nav-item {
+        font-size: 0.75rem; /* 极小屏幕进一步缩小导航字体 */
+        padding: 8px;
+    }
+    #languageToggle {
+        font-size: 0.7rem;
+        padding: 5px 8px;
+    }
+
+    .main-slider {
+        height: 40vh;
+        min-height: 250px;
+    }
+    .slide-caption h2 {
+        font-size: 1.2rem;
+    }
+    .slide-caption p {
+        font-size: 0.7rem;
+    }
+     .swiper-button-next, .swiper-button-prev { /* 在非常小的屏幕上可以考虑隐藏导航箭头 */
+        display: none;
+    }
+
+    .gallery-item {
+        width: 180px; /* 为非常小的屏幕调整卡片宽度 */
+    }
+    #gallery .gallery-item {
+        width: 160px; /* 合盛出品的卡片也相应调整 */
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+    .section-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .more-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Action Button 样式 */
+.action-button-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+}
+
+[data-role="action-button"] {
+    position: relative;
+}
+
+[data-role="action-button"] .main-action {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #1976D2;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+[data-role="action-button"] .actions {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+[data-role="action-button"].active .actions {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-role="action-button"] .actions li {
+    margin-bottom: 10px;
+}
+
+[data-role="action-button"] .actions li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+[data-role="action-button"] .actions li a:hover {
+    transform: scale(1.1);
+    background: #f5f5f5;
+}
+
+[data-role="action-button"] .main-action:hover {
+    background: #1565C0;
+    transform: rotate(90deg);
+}
+
+[data-role="action-button"].active .main-action {
+    transform: rotate(45deg);
+    background: #1565C0;
+}
+
+/* 保证 Swiper 正常布局 */
+.swiper-container, .main-slider {
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  display: flex;
+  transition-property: transform;
+}
+
+.swiper-slide {
+  flex: 0 0 100%;
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* 隐藏 Swiper 左右按钮 */
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}
